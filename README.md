@@ -1,1 +1,2 @@
-A static website to host all the projects!!
+# Portfolio
+Personal Website to list all the projects.
