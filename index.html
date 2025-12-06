@@ -1,8 +1,406 @@
-<html>
-  <title>
-    Jhanvi's Portfolio
-  </title>
-  <body>
-    <p>This is a small website showcasing all the projects i have done in the past.</p>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jhanvi Wadhawan | Strategic Insights & Market Research</title>
+    <!-- Tailwind CSS for rapid styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Phosphor Icons for elegant icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="./assets/css/styles.css" rel="stylesheet">
+    
+    <style>
+        
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- NAVIGATION (Fixed height, allowing main to take remaining space) -->
+    <nav class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-700">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <!-- Brand -->
+            <a href="#" onclick="switchTab('portfolio')" class="text-2xl font-bold tracking-tight text-white">
+                Jhanvi Wadhawan
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8">
+                <button onclick="switchTab('portfolio')" class="nav-btn text-white font-medium hover:text-sky-500 transition" data-target="portfolio">Portfolio</button>
+                <button onclick="switchTab('about')" class="nav-btn text-slate-400 font-medium hover:text-sky-500 transition" data-target="about">About</button>
+                <button onclick="switchTab('resume')" class="nav-btn text-slate-400 font-medium hover:text-sky-500 transition" data-target="resume">Resume</button>
+                <button onclick="switchTab('publications')" class="nav-btn text-slate-400 font-medium hover:text-sky-500 transition" data-target="publications">Publications</button>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-2xl text-slate-200" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <i class="ph ph-list"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-700 p-4 space-y-3 shadow-lg">
+            <button onclick="switchTab('portfolio')" class="block w-full text-left font-medium py-2 text-white">Portfolio</button>
+            <button onclick="switchTab('about')" class="block w-full text-left font-medium py-2 text-slate-400">About</button>
+            <button onclick="switchTab('resume')" class="block w-full text-left font-medium py-2 text-slate-400">Resume</button>
+            <button onclick="switchTab('publications')" class="block w-full text-left font-medium py-2 text-slate-400">Publications</button>
+        </div>
+    </nav>
+
+    <!-- 
+        MAIN CONTENT AREA: 
+        - flex-grow is CRITICAL to occupy all remaining vertical space.
+        - h-0 or min-h-0 is CRITICAL for flex children to size correctly.
+    -->
+    <main class="flex-grow min-h-0">
+        <div class="max-w-7xl mx-auto px-6 h-full">
+            <!-- 
+                Grid layout for the side panel and main content.
+                h-full ensures the grid takes the entire height of the main element.
+            -->
+            <div class="grid md:grid-cols-12 gap-12 py-8 h-full">
+
+                <!-- ==================== LEFT COLUMN (PROFILE, CONTACTS, SKILLS, EDUCATION) ==================== -->
+                <!-- CRITICAL: content-scroll class applied here to enable internal scrolling -->
+                <div class="md:col-span-4 flex flex-col h-full content-scroll">
+                    <div class="space-y-10"> 
+                        
+                        <!-- Profile Photo Placeholder -->
+                        <div class="aspect-1 rounded-2xl bg-slate-700 overflow-hidden relative border border-slate-700">
+                             <!-- Replace src with your image -->
+                            <img src="./assets/images/profile-pic.jpeg" alt="Profile Photo" class="w-full h-full object-cover">
+                        </div>
+                        
+                        <!-- Quick Contacts -->
+                        <div class="space-y-4 pt-4 border-t border-slate-700">
+                            <div class="flex items-center gap-3 text-slate-400">
+                                <i class="ph ph-map-pin text-xl"></i>
+                                <span>United States</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-slate-400">
+                                <i class="ph ph-briefcase text-xl"></i>
+                                <span>4+ Years Experience</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-slate-400">
+                                <i class="ph ph-envelope-simple text-xl"></i>
+                                <span>jhanviwadhawan@gmail.com</span>
+                            </div>
+                            <div class="flex gap-4 pt-4 border-t border-slate-700">
+                                <a target="_blank" href="https://www.linkedin.com/in/jhanvi-wadhawan-8ba85b168/" class="text-slate-500 hover:text-sky-500 text-2xl transition"><i class="ph ph-linkedin-logo"></i></a>
+                                <a target="_blank" href="https://www.github.com/jhanviwadhawan" class="text-slate-500 hover:text-sky-500 text-2xl transition"><i class="ph ph-github-logo"></i></a>
+                            </div>
+                        </div>
+
+                        <!-- Skills Block -->
+                        <div>
+                            <h3 class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-6">Core Competencies</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-2 bg-slate-800 text-slate-300 rounded-lg text-sm font-medium border border-slate-700">Primary Research</span>
+                                <span class="px-3 py-2 bg-slate-800 text-slate-300 rounded-lg text-sm font-medium border border-slate-700">Secondary Research</span>
+                                <span class="px-3 py-2 bg-slate-800 text-slate-300 rounded-lg text-sm font-medium border border-slate-700">Psychographic Segmentation</span>
+                                <span class="px-3 py-2 bg-slate-800 text-slate-300 rounded-lg text-sm font-medium border border-slate-700">Trend Analysis</span>
+                                <span class="px-3 py-2 bg-slate-800 text-slate-300 rounded-lg text-sm font-medium border border-slate-700">Data Visualization</span>
+                                <span class="px-3 py-2 bg-slate-800 text-slate-300 rounded-lg text-sm font-medium border border-slate-700">Go-to-Market Strategy</span>
+                                <span class="px-3 py-2 bg-slate-800 text-slate-300 rounded-lg text-sm font-medium border border-slate-700">Project Manangement</span>
+                            </div>
+                        </div>
+                        <!-- Ensure content reaches the bottom -->
+                        <div class="h-8"></div>
+
+                    </div>
+                </div>
+
+
+                <div class="md:col-span-8 flex flex-col h-full content-scroll">
+                    <div>
+                        
+                        <!-- ==================== TAB 1: Portfolio ==================== -->
+                        <section id="portfolio" class="tab-content active">
+                            <!-- Hero Intro -->
+                            <div class="mb-12 max-w-full">
+                                <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                                    I translate complex data into <span class="text-sky-500">actionable insights</span>.
+                                </h1>
+                                <p class="text-xl text-slate-400 leading-relaxed">
+                                    With <b>4+ years of experience</b>, my portfolio showcases my ability to move from data ingestion and cleaning (SQL, Python) to advanced modeling, machine learning and visualization (SPSS, Power BI).
+                                </p>
+                            </div>
+
+                            <!-- Category Filter Tabs -->
+                            <div class="mb-10 overflow-x-auto">
+                                <div id="project-filters" class="flex flex-nowrap space-x-3 pb-2">
+                                    <button onclick="filterProjects('all')" class="filter-btn px-4 py-2 text-sm font-medium rounded-full border transition active-filter" data-filter="all">
+                                        All Projects
+                                    </button>
+                                    <button onclick="filterProjects('market-research')" class="filter-btn px-4 py-2 text-sm font-medium rounded-full border transition" data-filter="market-research">
+                                        Market Research
+                                    </button>
+                                    <button onclick="filterProjects('customer-segmentation')" class="filter-btn px-4 py-2 text-sm font-medium rounded-full border transition" data-filter="customer-segmentation">
+                                        Customer Segmentation
+                                    </button>
+                                    <button onclick="filterProjects('threat-analysis')" class="filter-btn px-4 py-2 text-sm font-medium rounded-full border transition" data-filter="threat-analysis">
+                                        Threat Analysis
+                                    </button>
+                                    <button onclick="filterProjects('machine-learning')" class="filter-btn px-4 py-2 text-sm font-medium rounded-full border transition" data-filter="machine-learning">
+                                        Machine Learning
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Analysis Project Grid -->
+                            <h2 class="text-xs font-bold uppercase tracking-widest text-slate-600 mb-8">Selected Projects</h2>
+                            <div class="h-8"></div>
+
+                        </section>
+
+
+                        <!-- ==================== TAB 2: ABOUT ME (NARRATIVE ONLY) ==================== -->
+                        <section id="about" class="tab-content">
+                            <div class="space-y-8">
+                                <h2 class="text-3xl font-bold text-white">Hi I'm Jhanvi</h2>
+                                <div class="prose prose-lg text-slate-400 space-y-4">
+                                    <p>
+                                        A dedicated Data Analyst specializing in bridging the gap between complex data and strategic business decisions. My passion lies in transforming raw information into clear, actionable insights that drive growth and operational efficiency.
+                                        My core expertise is rooted in robust <b>Data Analytics</b>, utilizing a comprehensive technical stack that includes <b>advanced statistical analysis with SPSS, data manipulation and modeling in Python, and efficient database management through SQL</b>.
+                                        I excel at presenting findings through impactful data storytelling and visualization, creating <b>dynamic and interactive dashboards using industry-leading tools like Power BI and Tableau</b>.
+                                    </p>
+                                    <p>
+                                        Furthermore, I have a strong background in end-to-end <b>Primary and Secondary Market Research</b>. I combine this research foundation with my analytical skills to identify key market opportunities, understand consumer behavior, and provide a holistic view for strategic planning
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Personal Values/Philosophy -->
+                            <div class="bg-sky-900/30 p-8 rounded-2xl border border-sky-800 mt-8">
+                                <h3 class="text-sky-200 font-bold mb-4 flex items-center gap-2">
+                                    <i class="ph ph-lightbulb text-xl"></i> My Approach to Strategy
+                                </h3>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start gap-3">
+                                        <i class="ph ph-check-circle text-sky-500 mt-1"></i>
+                                        <span class="text-sky-300">Analytical Depth. Uncovering patterns in data to drive meaningful action.</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <i class="ph ph-check-circle text-sky-500 mt-1"></i>
+                                        <span class="text-sky-300">Industry Fluency. Leveraging R&D knowledge to anticipate market shifts.</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <i class="ph ph-check-circle text-sky-500 mt-1"></i>
+                                        <span class="text-sky-300">Collaborative Impact. Working with cross-functional teams to elevate brands.</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="space-y-8">
+                                <h2 class="text-xl font-bold text-white" style="padding-top: 3rem">Technical Tools</h2>
+                                <div class="space-y-3">
+                                    <div>
+                                        <div class="flex justify-between text-sm font-medium mb-1 text-white">
+                                            <span>SQL / Data Fluency</span>
+                                            <span class="text-slate-500">Advanced</span>
+                                        </div>
+                                        <div class="w-full bg-slate-700 rounded-full h-1.5">
+                                            <div class="bg-sky-500 h-1.5 rounded-full" style="width: 90%"></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex justify-between text-sm font-medium mb-1 text-white">
+                                            <span>Python / Statistical Modeling</span>
+                                            <span class="text-slate-500">Proficient</span>
+                                        </div>
+                                        <div class="w-full bg-slate-700 rounded-full h-1.5">
+                                            <div class="bg-sky-500 h-1.5 rounded-full" style="width: 80%"></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex justify-between text-sm font-medium mb-1 text-white">
+                                            <span>SPSS / Quantitative Analysis</span>
+                                            <span class="text-slate-500">Proficient</span>
+                                        </div>
+                                        <div class="w-full bg-slate-700 rounded-full h-1.5">
+                                            <div class="bg-sky-500 h-1.5 rounded-full" style="width: 85%"></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex justify-between text-sm font-medium mb-1 text-white">
+                                            <span>Advanced Excel</span>
+                                            <span class="text-slate-500">Advanced</span>
+                                        </div>
+                                        <div class="w-full bg-slate-700 rounded-full h-1.5">
+                                            <div class="bg-sky-500 h-1.5 rounded-full" style="width: 95%"></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex justify-between text-sm font-medium mb-1 text-white">
+                                            <span>Power BI, Tableau / Reporting</span>
+                                            <span class="text-slate-500">Proficient</span>
+                                        </div>
+                                        <div class="w-full bg-slate-700 rounded-full h-1.5">
+                                            <div class="bg-sky-500 h-1.5 rounded-full" style="width: 90%"></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex justify-between text-sm font-medium mb-1 text-white">
+                                            <span>Google Analytics, Qualtrics</span>
+                                            <span class="text-slate-500">Proficient</span>
+                                        </div>
+                                        <div class="w-full bg-slate-700 rounded-full h-1.5">
+                                            <div class="bg-sky-500 h-1.5 rounded-full" style="width: 80%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Filler for spacing -->
+                            <div class="h-8"></div>
+                        </section>
+
+
+                        <!-- ==================== TAB 3: RESUME (Experience) ==================== -->
+                        <section id="resume" class="tab-content">
+                            <div class="flex justify-between items-end mb-10 border-b border-slate-700 pb-8">
+                                <div>
+                                    <h2 class="text-3xl font-bold text-white">Professional Experience</h2>
+                                    <p class="text-slate-400 mt-2">A detailed timeline of my career and responsibilities.</p>
+                                </div>
+                                <button  onclick=" window.open('https://jhanviwadhawan.github.io/portfolio/assets/resume-jhanvi-wadhawan.pdf','_blank')" class="hidden md:flex items-center gap-2 px-6 py-3 bg-sky-600 text-white rounded-full font-medium hover:bg-sky-500 transition shadow-lg">
+                                    <i class="ph ph-download-simple text-lg"></i> Download PDF
+                                </button>
+                            </div>
+
+                            <!-- Experience Block (Full width of the 8-column space) -->
+                            <div class="space-y-10">
+                                <h3 class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-2">Work History</h3>
+
+                                <!-- Job 1: Hotspex -->
+                                <div class="relative pl-8 before:absolute before:left-[-5px] before:top-2 before:w-2.5 before:h-2.5 before:bg-slate-500 before:rounded-full before:ring-4 before:ring-slate-900">
+                                    <h4 class="text-xl font-bold text-white">Insights Analyst</h4>
+                                    <div class="text-slate-400 mb-4">Hotspex | March 2024 - Sept 2024</div>
+                                    <p class="text-slate-400 mb-4">Refined skills in quantitative and qualitative analysis, serving global consumer brands.</p>
+                                    <ul id="job-2-desc" class="list-disc list-outside ml-4 text-slate-400 space-y-1 text-sm">
+                                        <li>Developed a statistical model using Python (k-means clustering) to perform psychographic segmentation on 10,000+ survey
+                                            responses identifying 3 key profiles to inform digital advertising strategy.</li>
+                                        <li>Analyzed qualitative data from open-ends, interviews, and focus groups using thematic coding in NVivo and Excel,
+                                            surfacing key emotional and functional drivers behind consumer choices that shaped brand messaging and ad campaigns.</li>
+                                        <li>Developed and automated 3 Power BI dashboards to perform ongoing metrics analysis on advertising awareness KPIs such as
+                                            sentiment, behavior, and purchase intent across multiple categories, providing real-time insights into campaign performance.</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Job 2: IQVIA -->
+                                <div class="relative pl-8 before:absolute before:left-[-5px] before:top-2 before:w-2.5 before:h-2.5 before:bg-sky-500 before:rounded-full before:ring-4 before:ring-slate-900">
+                                    <h4 class="text-xl font-bold text-white">Analyst-Business Strategy & Insights </h4>
+                                    <div class="text-slate-400 mb-4">IQVIA | Sep 2021 - Jul 2023</div>
+                                    <p class="text-slate-400 mb-4">Focusing on market intelligence and strategic assessments for global healthcare and consumer brands.</p>
+                                    <ul id="job-1-desc" class="list-disc list-outside ml-4 text-slate-400 space-y-1 text-sm">
+                                        <li>Led secondary research and competitive intelligence projects to monitor market trends, regulatory changes, and competitor
+                                            activities across oncology, CNS, and immunology therapeutic areas.
+                                        </li>
+                                        <li>
+                                            Managed data analysis projects to define go-to-market strategy; defined project scope and deliverables, identified key market
+                                            trends and presented insights that contributed to a 20% market share growth.
+                                        </li>
+                                        <li>
+                                            Conducted qualitative and quantitative primary research by managing 30+ expert interviews and vendor-led surveys with 500+
+                                            participants, driving product prioritization and segmentation refinements.
+                                        </li>
+                                        <li>
+                                            Built and maintained Power BI and Tableau dashboards visualizing pricing, sales, and market access trends across multiple
+                                            global regions, reducing manual reporting effort by over 25%.
+                                        </li>
+                                        <li>
+                                            Collaborated with cross-functional teams to prepare presentations and summary reports that communicated research findings
+                                            to internal stakeholders and clients.
+                                        </li>
+                                        <li>
+                                            Monitored and tracked industry news, regulatory updates, and competitor activities daily to support timely and informed market
+                                            analysis.
+                                        </li>
+                                        <li>
+                                            Leveraged SQL for data management tasks, including extracting, cleaning and validating large datasets from proprietary
+                                            databases to ensure data integrity for all downstream analysis and reporting.
+                                        </li>
+                                    </ul>
+
+                                </div>
+
+                                <!-- Job 3: R&D Role -->
+                                <div class="relative pl-8 before:absolute before:left-[-5px] before:top-2 before:w-2.5 before:h-2.5 before:bg-slate-500 before:rounded-full before:ring-4 before:ring-slate-900">
+                                    <h4 class="text-xl font-bold text-white">Scientist - Research and Development</h4>
+                                    <div class="text-slate-400 mb-4">Dr. Reddy's Laboratories Ltd | Jul 2019 - Sep 2021</div>
+                                    <p class="text-slate-400 mb-4">Research Scientist working on cutting edge drug development and pharmaceutics.</p>
+                                    <ul id="job-3-desc" class="list-disc list-outside ml-4 text-slate-400 space-y-1 text-sm">
+                                        <li>Spearheaded development and regulatory approval of 5+ injectable products, including a COVID-19 therapeutic that generated
+                                            $10M+ in global revenue within 12 months</li>
+                                        <li>Optimized formulation development processes, reducing time-to-market by 20% and cutting operational costs by 15%.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Filler for spacing -->
+                            <div class="h-8"></div>
+                        </section>
+
+
+                        <!-- ==================== TAB 4: PUBLICATIONS ==================== -->
+                        <section id="publications" class="tab-content">
+                            <div class="max-w-3xl">
+                                <div class="text-left mb-12">
+                                    <h2 class="text-3xl font-bold text-white mb-4">Publications & Speaking</h2>
+                                    <p class="text-slate-400">Academic papers and industry articles</p>
+                                </div>
+
+                                <div class="space-y-6">
+                                    <!-- Publication Item -->
+                                    <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 shadow-xl hover:border-sky-500 transition group">
+                                        <div class="flex justify-between items-start">
+                                            <div>
+                                                <div class="flex gap-2 mb-2">
+                                                    <span class="text-xs font-bold text-sky-300 bg-sky-900 px-2 py-1 rounded">Industry Article</span>
+                                                    <span class="text-xs text-slate-500 py-1">2024</span>
+                                                </div>
+                                                <h3 class="text-lg font-bold text-white group-hover:text-sky-500 transition">
+                                                    Olympic Blog
+                                                </h3>
+                                                <p class="text-slate-400 mt-2 text-sm">
+                                                    An article on how <a href="https://ethosense.ca" target="_blank">Ethosense by Hotspex</a> can be a game changer for marketing campaigns during olympics sporting event.
+                                                </p>
+                                            </div>
+                                            <a href="https://www.linkedin.com/posts/hotspex_olympic-blog-activity-7221178407156404225-kw1S" target="_blank" class="text-slate-500 hover:text-sky-500"><i class="ph ph-arrow-square-out text-xl"></i></a>
+                                        </div>
+                                    </div>
+
+                                    <!-- Publication Item -->
+                                    <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 shadow-xl hover:border-sky-500 transition group">
+                                        <div class="flex justify-between items-start">
+                                            <div>
+                                                <div class="flex gap-2 mb-2">
+                                                    <span class="text-xs font-bold text-sky-300 bg-sky-900 px-2 py-1 rounded">Research Paper</span>
+                                                    <span class="text-xs text-slate-500 py-1">2021</span>
+                                                </div>
+                                                <h3 class="text-lg font-bold text-white group-hover:text-sky-500 transition">
+                                                    Nanocrystals for improved topical delivery of medium soluble drug: A case study of acyclovir.
+                                                </h3>
+                                                <p class="text-slate-400 mt-2 text-sm">
+                                                    Journal of Drug Delivery Science and Technology.
+                                                </p>
+                                            </div>
+                                            <a href="https://www.sciencedirect.com/science/article/abs/pii/S1773224721003427" target="_blank" class="text-slate-500 hover:text-sky-500"><i class="ph ph-arrow-square-out text-xl"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Filler for spacing -->
+                            <div class="h-8"></div>
+                        </section>
+                    </div>
+                </div> <!-- End of md:col-span-8 for dynamic content -->
+
+            </div> <!-- End of global grid -->
+        </div>
+    </main>
+
+    <!-- JAVASCRIPT FOR TABS AND FILTERING -->
+    <script src="./assets/js/script.js"></script>
+</body>
 </html>
